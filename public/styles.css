@@ -1,0 +1,120 @@
+body {
+    background-color: rgb(15, 15, 20);
+    color: rgb(245, 245, 245);
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+header h2 {
+    color: rgb(0, 191, 255);
+}
+
+header p {
+    color: rgb(180, 180, 180);
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 15px rgba(255, 92, 0, 0.1);
+}
+
+legend {
+    color: rgb(0, 191, 255);
+    font-weight: 500;
+}
+
+button {
+    background-color: rgb(255, 92, 0);
+    border: none;
+}
+
+button:hover {
+    background-color: rgb(230, 80, 0);
+}
+
+input[type="text"] {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(180, 180, 180);
+    color: rgb(0, 0, 0);
+}
+
+input[type="text"]:focus {
+    border-color: rgb(0, 191, 255);
+    box-shadow: 0 0 5px rgb(0, 191, 255);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li label {
+    margin-left: 0.5rem;
+}
+
+section h3 {
+    color: rgb(0, 191, 255);
+    margin-top: 1.5rem;
+}
+
+.album-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.albumCards {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 450px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.albumCards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px rgba(0, 191, 255, 0.25);
+}
+
+.footer {
+    background: #111;
+    border-top: 1px solid #333;
+    color: #bbb;
+}
+
+.footer__inner {
+    max-width: 100%;
+    padding: 12px 10px;
+    text-align: center;
+}
+
+
+
+
+@media (max-width: 600px) {
+    .albumCards {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        border-radius: 6px;
+    }
+
+    .albumCards img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+    }
+}
