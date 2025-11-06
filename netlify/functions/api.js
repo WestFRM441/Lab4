@@ -1,15 +1,16 @@
 const express = require("express");
+const serverless = require("serverless-http");
 const path = require("path");
-const app = express();
-const PORT = 3000;
+const fetch = require("node-fetch");
 
+const app = express();
 const API_KEY = "kmiiNCjWhCzqZUJCMwMCyHXwERcGgYyHaMztzrRm";
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../../public")));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "../../public/index.html"));
 });
 
 app.post("/discover", async (req, res) => {
@@ -17,7 +18,6 @@ app.post("/discover", async (req, res) => {
 
   let artist = type === "artist" ? query : null;
   let genre = type === "genre" ? query : null;
-
   if (Array.isArray(genres) && genres.length) genre = genres.join(",");
 
   let apiUrl = `https://api.discogs.com/database/search?token=${API_KEY}&per_page=20`;
@@ -27,7 +27,6 @@ app.post("/discover", async (req, res) => {
 
   try {
     const response = await fetch(apiUrl);
-
     const data = await response.json();
     const items = data.results;
     const results = [];
@@ -48,4 +47,4 @@ app.post("/discover", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+module.exports.handler = serverless(app);

@@ -21,7 +21,7 @@
   "homepage": "https://github.com/WestFRM441/Lab4#readme",
   "dependencies": {
     "express": "^5.1.0",
-    "serverless-http": "^4.0.0",
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^2.7.0",
+    "serverless-http": "^4.0.0"
   }
 }
