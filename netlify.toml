@@ -3,6 +3,6 @@
   publish = "public"
 
 [[redirects]]
-  from = "/*"
+  from = "/discover"
   to = "/.netlify/functions/api"
   status = 200
